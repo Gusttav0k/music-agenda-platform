@@ -20,42 +20,52 @@ export default function AgendaCard({
   maps,
   delay = 0,
 }: AgendaCardProps) {
+  const abrirMapa = () => {
+    setTimeout(() => {
+      window.open(maps, "_blank", "noopener,noreferrer");
+    }, 180);
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      onClick={abrirMapa}
+      role="link"
+      tabIndex={0}
+      initial={{ opacity: 0, y: 35 }}
       animate={{ opacity: 1, y: 0 }}
+      whileTap={{ scale: 0.96 }}
       transition={{
-        duration: 1,
-        delay,
-        ease: "easeOut",
+        opacity: { duration: 0.8, delay },
+        y: { duration: 0.8, delay, ease: "easeOut" },
+        scale: { duration: 0.12 },
       }}
-      className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-xl backdrop-blur"
+      className="mx-auto flex w-full cursor-pointer gap-3 rounded-3xl border border-white/10 bg-white/[0.04] p-3 shadow-lg backdrop-blur transition hover:bg-white/[0.07] sm:gap-4"
     >
+       
       <Image
         src={imagem}
         alt={local}
-        width={1000}
-        height={1000}
-        className="aspect-square w-full object-cover"
+        width={300}
+        height={300}
+        className="h-24 w-24 shrink-0 rounded-2xl object-cover sm:h-28 sm:w-28"
       />
 
-      <div className="space-y-3 p-5">
-        <p className="text-sm font-semibold uppercase tracking-wide text-zinc-400">
+      <div className="flex flex-1 flex-col justify-center">
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-zinc-500">
           {dia}
         </p>
 
-        <h2 className="mt-1 text-2xl font-bold text-white">{local}</h2>
+        <h2 className="mt-1 text-2xl font-bold text-white">
+          {local}
+        </h2>
 
-        <p className="mt-2 text-zinc-300">🕒 {horario}</p>
+        <p className="mt-1 text-sm text-zinc-300">
+          🕒 {horario}
+        </p>
 
-        <a
-          href={maps}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-block rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200"
-        >
-          Ver localização
-        </a>
+        <p className="mt-3 text-sm font-semibold text-white">
+          📍 Abrir no Maps →
+        </p>
       </div>
     </motion.div>
   );

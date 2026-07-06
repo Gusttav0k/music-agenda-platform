@@ -1,20 +1,16 @@
 import AgendaCard from "@/components/agendacards";
 import Image from "next/image";
+import Header from "@/components/header";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-neutral-950 px-4 py-8 text-white">
-  <section className="mx-auto max-w-sm">
-    <h1 className="text-center text-3xl font-bold">
-      Band Schedule Platform
-    </h1>
-
-    <p className="mt-2 text-center text-sm text-zinc-400">
-      Plataforma web para divulgação da agenda da banda
-    </p>
+      <Header />  
+      <section className="relative z-10 mx-auto w-full max-w-sm px-5">
+    
 
     <div className="mt-8 space-y-5">
-
+    <div className="mx-auto flex max-w-xs flex-col gap-1"></div>
       <AgendaCard
       dia="Terça feira"
       local="EH bar"
