@@ -39,7 +39,7 @@ export default function AgendaCard({
         y: { duration: 0.8, delay, ease: "easeOut" },
         scale: { duration: 0.12 },
       }}
-      className="mx-auto flex w-full cursor-pointer gap-3 rounded-3xl border border-white/10 bg-white/[0.04] p-3 shadow-lg backdrop-blur transition hover:bg-white/[0.07] sm:gap-4"
+      className="mx-auto flex w-full cursor-pointer gap-3 rounded-3xl border border-white/10 bg-neutral-900 p-3 shadow-lg backdrop-blur"
     >
        
       <Image
