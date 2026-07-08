@@ -16,7 +16,7 @@ export default function Decorations() {
         style={{ opacity, y }}
         animate={{ y: [0, -12, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -left-27 top-28 h-80 sm:-left-6 sm:h-[520px]"
+        className="absolute -left-28 top-32 h-80 sm:-left-24 sm:h-96 md:-left-12 md:h-[500px]"
        />
        
          
@@ -27,7 +27,7 @@ export default function Decorations() {
         style={{ opacity, y }}
         animate={{ y: [0, -12, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -right-15 top-28 h-80 sm:-right-6 sm:h-[520px]"
+        className="absolute -right-14 top-32 h-80 sm:-right-24 sm:h-96 md:-right-12 md:h-[500px]"
       />
     </div>
   );

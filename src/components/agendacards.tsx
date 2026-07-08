@@ -39,7 +39,7 @@ export default function AgendaCard({
         y: { duration: 0.8, delay, ease: "easeOut" },
         scale: { duration: 0.12 },
       }}
-      className="mx-auto flex w-full cursor-pointer gap-3 rounded-3xl border border-white/10 bg-neutral-900 p-3 shadow-lg backdrop-blur"
+      className="mx-auto flex w-full cursor-pointer gap-3 rounded-3xl border border-white/10 bg-neutral-900 p-3 shadow-lg transition hover:bg-neutral-800 sm:gap-4 sm:p-4"
     >
        
       <Image
@@ -47,7 +47,7 @@ export default function AgendaCard({
         alt={local}
         width={300}
         height={300}
-        className="h-24 w-24 shrink-0 rounded-2xl object-cover sm:h-28 sm:w-28"
+        className="h-20 w-20 shrink-0 rounded-2xl object-cover sm:h-24 sm:w-24 md:h-28 md:w-28"
       />
 
       <div className="flex flex-1 flex-col justify-center">
