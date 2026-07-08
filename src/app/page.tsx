@@ -1,8 +1,10 @@
 import AgendaCard from "@/components/agendacards";
 import Header from "@/components/header";
 import Decorations from "@/components/Decoration";
+import { agenda } from "@/data/agenda";
 
 export default function Home() {
+ 
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 px-4 py-8 text-white">
       <Decorations />
@@ -12,32 +14,18 @@ export default function Home() {
         <Header />
 
         <div className="mt-8 space-y-5">
-          <AgendaCard
-            dia="Terça feira"
-            local="EH bar"
-            horario="20:00"
-            imagem="/imagem/EH BAR.PNG"
-            maps="https://maps.app.goo.gl/wTP2TrgJcfdgyqhf6"
-            delay={0}
-          />
-
-          <AgendaCard
-            dia="Sexta-feira"
-            local="Sun Paradise"
-            horario="22:00"
-            imagem="/imagem/sun.PNG"
-            maps="https://maps.app.goo.gl/3EErFXtVH2knsofdA"
-            delay={0.2}
-          />
-
-          <AgendaCard
-            dia="Sabado"
-            local="Paradise"
-            horario="17:00"
-            imagem="/imagem/sun2.PNG"
-            maps="https://maps.app.goo.gl/3EErFXtVH2knsofdA"
-            delay={0.4}
-          />
+          {agenda.map((show, index) => (
+  <AgendaCard
+    key={show.local}
+    dia={show.dia}
+    local={show.local}
+    horario={show.horario}
+    imagem={show.imagem}
+    maps={show.maps}
+    delay={index * 0.2}
+  />
+))}
+          
         </div>
       </section>
     </main>
