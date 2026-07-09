@@ -2,6 +2,7 @@ import AgendaCard from "@/components/agendacards";
 import Header from "@/components/header";
 import Decorations from "@/components/Decoration";
 import { agenda } from "@/data/agenda";
+import hero from "@/components/Hero";
 
 export default function Home() {
  
@@ -12,7 +13,8 @@ export default function Home() {
 
       <section className="relative z-10 mx-auto w-full max-w-[320px] px-2 sm:max-w-[360px] md:max-w-[420px] lg:max-w-[460px]">
         <Header />
-
+        <hero />
+        
         <div className="mt-8 space-y-5">
           {agenda.map((show, index) => (
   <AgendaCard
