@@ -77,37 +77,95 @@ export default function AdminPage() {
 {modalAberto && (
   <div className="fixed inset-0 z-50 flex items-end bg-black/70">
     <div className="mx-auto w-full max-w-md rounded-t-3xl bg-neutral-900 p-5 text-white">
-        <div className="mx-auto mb-5 h-1 w-12 rounded-full bg-zinc-700" />
+    <div className="mx-auto mb-5 h-1 w-12 rounded-full bg-zinc-700" />
       <h2 className="text-xl font-bold">Novo Show</h2>
 
       <div className="mt-5 space-y-4">
-        <input
-          placeholder="Local"
-          className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none"
-        />
+        <div className="space-y-2">
+  <label className="flex items-center gap-2 text-zinc-300">
+    📍 <span>Local</span>
+  </label>
 
-        <input
-          placeholder="Dia"
-          className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none"
-        />
+  <input
+    placeholder="Ex: EH Bar"
+    className="w-full rounded-2xl border border-zinc-700 bg-neutral-950 px-5 py-4 text-white placeholder:text-zinc-500 outline-none transition focus:border-emerald-500"
+  />
+</div>
 
-        <input
-          placeholder="Horário"
-          className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none"
-        />
+        <div>
+  <label className="mb-2 block text-sm font-medium text-zinc-300">
+    📅 Dia da semana
+  </label>
 
-        <input
-          placeholder="Link do Google Maps"
-          className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none"
-        />
+  <select className="w-full rounded-xl bg-neutral-800 px-4 py-3 outline-none">
+    <option>Segunda-feira</option>
+    <option>Terça-feira</option>
+    <option>Quarta-feira</option>
+    <option>Quinta-feira</option>
+    <option>Sexta-feira</option>
+    <option>Sábado</option>
+    <option>Domingo</option>
+  </select>
+</div>
 
-        <button className="w-full rounded-xl bg-emerald-500 py-3 font-bold">
-          Salvar
-        </button>
+        <div>
+  <div>
+    <div className="space-y-2">
+  <label className="mb-2 block text-sm font-medium text-zinc-300">
+    🕒 Horário
+  </label>
+</div>
+ <input
+    type="time"
+    className="
+      w-full
+      rounded-2xl
+      border
+      border-zinc-700
+      bg-neutral-950
+      px-5
+      py-4
+      text-white
+      outline-none
+      appearance-none
+      focus:border-emerald-500
+    "
+  />
+  </div>
+</div>
+
+        <div className="space-y-2">
+  <label className="flex items-center gap-2 text-zinc-300">
+    🗺️ <span>Link do Google Maps</span>
+  </label>
+
+  <input
+    placeholder="Cole o link do Google Maps"
+    className="w-full rounded-2xl border border-zinc-700 bg-neutral-950 px-5 py-4 text-white placeholder:text-zinc-500 outline-none transition focus:border-emerald-500"
+  />
+</div>
+
+       <button
+  className="
+    mt-2
+    w-full
+    rounded-2xl
+    bg-emerald-500
+    py-4
+    text-lg
+    font-semibold
+    text-white
+    transition
+    hover:bg-emerald-600
+    active:scale-95
+  "
+>
+  ✔ Salvar
+</button>
 
         <button
           onClick={() => setModalAberto(false)}
-          className="w-full rounded-xl bg-neutral-800 py-3 text-zinc-300"
+          className="w-full rounded-2xl bg-neutral-800 py-4 text-zinc-300 transition hover:bg-neutral-700"
         >
           Cancelar
         </button>
