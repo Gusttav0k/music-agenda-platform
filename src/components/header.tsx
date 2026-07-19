@@ -10,11 +10,11 @@ export default function Header() {
       transition={{ duration: 0.9, ease: "easeOut" }}
       className="mb-10 text-center"
     >
-      <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5 text-3xl shadow-xl">
+      <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-white/25 bg-white/10 text-3xl shadow-xl backdrop-blur-sm">
         🎵
       </div>
 
-      <p className="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-500">
+      <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/70">
         Site oficial
       </p>
 
@@ -22,7 +22,7 @@ export default function Header() {
         Banda
       </h1>
 
-      <p className="mt-3 text-sm text-zinc-400">
+      <p className="mt-3 text-sm text-white/75">
         Agenda semanal 
       </p>
     </motion.header>

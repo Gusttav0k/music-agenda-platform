@@ -20,17 +20,12 @@ export default function AgendaCard({
   maps,
   delay = 0,
 }: AgendaCardProps) {
-  const abrirMapa = () => {
-    setTimeout(() => {
-      window.open(maps, "_blank", "noopener,noreferrer");
-    }, 180);
-  };
-
   return (
-    <motion.div
-      onClick={abrirMapa}
-      role="link"
-      tabIndex={0}
+    <motion.a
+      href={maps}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Ver localização de ${local} no Google Maps`}
       initial={{ opacity: 0, y: 35 }}
       animate={{ opacity: 1, y: 0 }}
       whileTap={{ scale: 0.96 }}
@@ -39,7 +34,7 @@ export default function AgendaCard({
         y: { duration: 0.8, delay, ease: "easeOut" },
         scale: { duration: 0.12 },
       }}
-      className="mx-auto flex w-full cursor-pointer gap-3 rounded-3xl border border-white/10 bg-neutral-900 p-3 shadow-lg transition hover:bg-neutral-800 sm:gap-4 sm:p-4"
+      className="mx-auto flex w-full gap-3 rounded-3xl border border-white/15 bg-[#270033]/90 p-3 shadow-xl backdrop-blur-sm transition hover:bg-[#3d00d9]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#efff00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#e90055] sm:gap-4 sm:p-4"
     >
        
       <Image
@@ -67,6 +62,6 @@ export default function AgendaCard({
           📍 Abrir no Maps →
         </p>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
